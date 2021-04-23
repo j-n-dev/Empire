@@ -51,3 +51,11 @@ The rules are as follows:
 # Deps:
 
 C++14 and up, SFML 2.4.1 and up
+
+# NOTES:
+
+The simulation here is slightly different to the "original" simulation. I feel like it's more realistic that way.
+
+Sometimes it might error out while starting up. I don't know.
+
+All of the std::cout lines had to be removed because my compiler was not happy with it (heck, I don't even know if my version will compile on CMake at all).
