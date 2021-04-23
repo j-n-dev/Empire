@@ -15,7 +15,7 @@ RandomColonyCreator::RandomColonyCreator(int numColonies)
     std::ifstream inFile("colours.txt");
     if (!inFile.is_open())
     {
-        std::cout << TextColour::Red << "Unable to open colours.txt\n\n" << TextColour::Default;
+        
     }
     sf::Color colour;
 

@@ -16,7 +16,6 @@ CustomColonyCreator::CustomColonyCreator(const std::string& fileName)
 
     if (!inFile.is_open())
     {
-        std::cout << "Unable to open custom colonies for: " << fileName << '\n';
         exit(-1);
     }
 
@@ -25,7 +24,6 @@ CustomColonyCreator::CustomColonyCreator(const std::string& fileName)
     {
         if (line == "COLONY")
         {
-            std::cout << "Found colony!\n";
             bool    startFound      = false,
                     strengthFound   = false,
                     peopleFound     = false,
@@ -72,9 +70,6 @@ CustomColonyCreator::CustomColonyCreator(const std::string& fileName)
             }
             else
             {
-                std::cout   << TextColour::Red
-                            << "Failed to load colony, section missing\n"
-                            << TextColour::Default;
             }
         }
     }
@@ -93,7 +88,6 @@ std::vector<sf::Vector2i> CustomColonyCreator::createColonyLocations(const Confi
         y = m_colonyInfo[i - 1].startPoint.y;
         if (!map.isLandAt(x, y))
         {
-            std::cout << "WARNING: COLONY OVER WATER.\n";
         }
 
         locations[i] = {x, y};
@@ -159,9 +153,6 @@ void CustomColonyCreator::loadStrength(ColonyInfo& info, std::ifstream& inFile)
 
 void CustomColonyCreator::printError (const std::string& name)
 {
-    std::cout   << TextColour::Red
-                << name << "MUST BE GREATER THAN 0, setting to 100.\n\n"
-                << TextColour::Default;
 }
 
 

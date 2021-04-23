@@ -67,16 +67,18 @@ void Person::fight(Person& other)
     else
     {
         other.kill();
+        m_strength *= 0.9f;
     }
 }
 
 Vect2 Person::getNextMove() const
 {
-    if (m_isSwimming)
-        return m_swimDir;
-    else
-        return { (int8_t)Random::get().intInRange(-1, 1),
-                 (int8_t)Random::get().intInRange(-1, 1)};
+    //if (Random::get().intInRange(0, 65) == 0)
+        if (m_isSwimming)
+            return m_swimDir;
+        else
+            return { (int8_t)Random::get().intInRange(-1, 1),
+                     (int8_t)Random::get().intInRange(-1, 1) };
 }
 
 

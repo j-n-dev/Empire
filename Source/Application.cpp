@@ -87,16 +87,16 @@ void Application::makeImage()
     m_imageMutex.lock();
     static int imageCount = 0;
 
-    std::cout << "Saving image... Please hold...\n";
+
     std::string fileName = "Screenshots/Screenshot" + std::to_string(imageCount++) + ".png";
 
     if (m_pixelBuffer.saveToFile(fileName))
     {
-        std::cout << TextColour::Green << "Saved, to file " << fileName << "! Be aware, future sessions WILL OVERRIDE these images\n\n" << TextColour::Default;
+        
     }
     else
     {
-        std::cout << TextColour::Red << "Failed to save!\n\n" << TextColour::Default;
+        
     }
     m_imageMutex.unlock();
 }

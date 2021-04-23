@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <vector>
 #include <mutex>
+#include <string>
 
 #include "Sim/World.h"
 #include "Util/NonCopyable.h"

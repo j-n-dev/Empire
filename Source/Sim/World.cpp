@@ -14,7 +14,7 @@
 #include "RandomColonyCreator.h"
 #include "CustomColonyCreator.h"
 
-//#define SWIMMING_ENABLED
+#define SWIMMING_ENABLED
 //#define LASER_SWIMMING
 
 constexpr int CHAR_SIZE = 14;
@@ -158,7 +158,7 @@ void World::update(sf::Image& image)
             #ifdef SWIMMING_ENABLED
             if (!person.isSwimming())
             {
-                if ((Random::get().intInRange(0, 10000) < 30))
+                if ((Random::get().intInRange(0, 1000) < 5))
                 {
                     person.startSwim(nextMove);
                 }
